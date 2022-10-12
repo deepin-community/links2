@@ -1,0 +1,26 @@
+# Translations
+links2 binary: spelling-error-in-binary usr/bin/links2 Ment Meant
+links2 binary: spelling-error-in-binary usr/bin/links2 Programm Program
+links2 binary: spelling-error-in-binary usr/bin/links2 adress address
+links2 binary: spelling-error-in-binary usr/bin/links2 convertor converter
+links2 binary: spelling-error-in-binary usr/bin/links2 loggin login
+links2 binary: spelling-error-in-binary usr/bin/links2 proces process
+links2 binary: spelling-error-in-binary usr/bin/links2 suport support
+links2 binary: spelling-error-in-binary usr/bin/links2 Ressources Resources
+links2 binary: spelling-error-in-binary usr/bin/links2 Autorisation Authorisation
+links2 binary: spelling-error-in-binary usr/bin/links2 coul could
+links2 binary: spelling-error-in-binary usr/bin/links2 meny many
+links2 binary: spelling-error-in-binary usr/bin/links2 Acces Access
+links2 binary: spelling-error-in-binary usr/bin/links2 recommand recommend
+links2 binary: spelling-error-in-binary usr/bin/links2 mor more
+links2 binary: spelling-error-in-binary usr/bin/links2 Warnig Warning
+links2 binary: spelling-error-in-binary usr/bin/links2 Buit Built
+links2 binary: spelling-error-in-binary usr/bin/links2 inaccesible inaccessible
+links2 binary: spelling-error-in-binary usr/bin/links2 requiere require
+
+# Part of a compiled in font
+links2 binary: spelling-error-in-binary usr/bin/links2 konW know
+
+# Part of the application, no documentation
+links2: package-contains-documentation-outside-usr-share-doc usr/share/links2/calibration.html
+links2: package-contains-documentation-outside-usr-share-doc usr/share/links2/kalibrace.html

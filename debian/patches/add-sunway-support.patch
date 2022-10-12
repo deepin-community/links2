@@ -1,0 +1,61 @@
+Description: add sunway support
+Author: Changwei Miao <miaochangwei@uniontech.com>
+
+---
+Last-Update: 2022-07-27
+
+--- links2-2.25.orig/configure
++++ links2-2.25/configure
+@@ -4704,6 +4704,9 @@ int main(void)
+ #if defined(__alpha__)
+ 	__asm__ volatile (".p2align 3; nop; .p2align 3" ::: "memory");
+ #endif
++#if defined(__sw_64__)
++	__asm__ volatile (".p2align 3; nop; .p2align 3" ::: "memory");
++#endif
+ 	return 0;
+ }
+ 
+--- links2-2.25.orig/configure.in
++++ links2-2.25/configure.in
+@@ -507,6 +507,9 @@ int main(void)
+ #if defined(__alpha__)
+ 	__asm__ volatile (".p2align 3; nop; .p2align 3" ::: "memory");
+ #endif
++#if defined(__sw_64__)
++	__asm__ volatile (".p2align 3; nop; .p2align 3" ::: "memory");
++#endif
+ 	return 0;
+ }
+ ], ac_cv_have_gcc_assembler=yes, ac_cv_have_gcc_assembler=no, ac_cv_have_gcc_assembler="$ac_cv_have_emx")
+--- links2-2.25.orig/dip.c
++++ links2-2.25/dip.c
+@@ -112,7 +112,7 @@ static struct lru font_cache;
+ 			 * for letters with an image under them )
+ 			 */
+ 
+-#if defined(__i686__) || defined(__athlon__) || defined(__SSE2__) || defined(__x86_64__) || defined(__aarch64__) || defined(__alpha) || defined(__hppa)
++#if defined(__i686__) || defined(__athlon__) || defined(__SSE2__) || defined(__x86_64__) || defined(__aarch64__) || defined(__alpha) || defined(__hppa) || defined(__sw_64)
+ /*
+  * On modern processors it is faster to do this in floating point.
+  * Do it only if we are sure that the coprocessor is present.
+--- links2-2.25.orig/links.h
++++ links2-2.25/links.h
+@@ -300,6 +300,7 @@
+ #endif
+ #if (defined(__alpha__) || defined(__alpha)) && !defined(__alpha_bwx__)
+ #define OPENMP_NONATOMIC	1
++#elif (defined(__sw_64__) || defined(__sw_64)) && !defined(__sw_64_bwx__)
+ #else
+ #define OPENMP_NONATOMIC	0
+ #endif
+--- links2-2.25.orig/string.c
++++ links2-2.25/string.c
+@@ -81,6 +81,7 @@ void add_bytes_to_str(unsigned char **s,
+ 	defined(__tune_k6__) ||						\
+ 	defined(__tune_lakemont__) ||					\
+ 	(defined(__alpha__) && !defined(__alpha_cix__)) ||		\
++	(defined(__sw_64__) && !defined(__sw_64_cix__)) ||		\
+ 	(defined(__mips) && __mips < 32) ||				\
+ 	(defined(__ARM_ARCH) && __ARM_ARCH < 5) ||			\
+ 	(defined(__sparc__) && (!defined(__VIS__) || __VIS__ < 0x300)) ||\

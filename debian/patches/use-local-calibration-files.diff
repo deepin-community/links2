@@ -1,0 +1,57 @@
+Description: Use local instead of online copy of calibration files
+Author: Axel Beckert <abe@debian.org>
+Forwarded: not-needed
+
+--- a/intl/czech.lng
++++ b/intl/czech.lng
+@@ -715,4 +715,4 @@
+ T_HK_BEOS_TERMINAL, "B",
+ T_URL_MANUAL, "http://links.twibright.com/user.html",
+ T_URL_HOMEPAGE, "http://links.twibright.com/index_cz.php",
+-T_URL_CALIBRATION, "http://links.twibright.com/kalibrace.html",
++T_URL_CALIBRATION, "file:///usr/share/links2/kalibrace.html",
+--- a/intl/english.lng
++++ b/intl/english.lng
+@@ -715,4 +715,4 @@
+ T_HK_BEOS_TERMINAL, "B",
+ T_URL_MANUAL, "http://links.twibright.com/user_en.html",
+ T_URL_HOMEPAGE, "http://links.twibright.com/",
+-T_URL_CALIBRATION, "http://links.twibright.com/calibration.html",
++T_URL_CALIBRATION, "file:///usr/share/links2/calibration.html",
+--- a/intl/slovak.lng
++++ b/intl/slovak.lng
+@@ -715,4 +715,4 @@
+ T_HK_BEOS_TERMINAL, "B",
+ T_URL_MANUAL, "http://links.twibright.com/user.html",
+ T_URL_HOMEPAGE, "http://links.twibright.com/index_cz.php",
+-T_URL_CALIBRATION, "http://links.twibright.com/kalibrace.html",
++T_URL_CALIBRATION, "file:///usr/share/links2/kalibrace.html",
+--- a/language.inc
++++ b/language.inc
+@@ -5044,7 +5044,7 @@
+   { "B" },
+   { "http://links.twibright.com/user.html" },
+   { "http://links.twibright.com/index_cz.php" },
+-  { "http://links.twibright.com/kalibrace.html" },
++  { "file:///usr/share/links2/kalibrace.html" },
+ };
+ 
+ static_const struct translation translation_danish [] = {
+@@ -7207,7 +7207,7 @@
+   { "B" },
+   { "http://links.twibright.com/user_en.html" },
+   { "http://links.twibright.com/" },
+-  { "http://links.twibright.com/calibration.html" },
++  { "file:///usr/share/links2/calibration.html" },
+ };
+ 
+ static_const struct translation translation_estonian [] = {
+@@ -19464,7 +19464,7 @@
+   { "B" },
+   { "http://links.twibright.com/user.html" },
+   { "http://links.twibright.com/index_cz.php" },
+-  { "http://links.twibright.com/kalibrace.html" },
++  { "file:///usr/share/links2/kalibrace.html" },
+ };
+ 
+ static_const struct translation translation_spanish [] = {
